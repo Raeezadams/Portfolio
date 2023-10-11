@@ -13,8 +13,8 @@ const Home = (props) => {
     if(spotlight != null)
     {
       document.addEventListener('mousemove', (e) => {
-        setMouseX(e.clientX);
-        setMouseY(e.clientY);
+        setMouseX(e.pageX);
+        setMouseY(e.pageY);
       })
     }
   }, [])
