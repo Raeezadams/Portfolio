@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-//const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
+const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import './home.css'
@@ -13,8 +13,8 @@ const Home = (props) => {
     if(spotlight != null)
     {
       document.addEventListener('mousemove', (e) => {
-        setMouseX(e.clientX);
-        setMouseY(e.clientY);
+        setMouseX(e.pageX);
+        setMouseY(e.pageY);
       })
     }
   }, [])
@@ -275,7 +275,7 @@ const Home = (props) => {
             <div className="home-card">
               <img
                 alt="hackathonCertificate"
-                src= {'HackathonCertificate'}
+                src= {HackathonCertificate}
                 className="home-image4"
               />
               <div className="home-content-container2">
