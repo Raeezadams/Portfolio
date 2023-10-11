@@ -1,12 +1,34 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
 import { Helmet } from 'react-helmet'
-
+import { useEffect } from 'react'
 import './home.css'
 
 const Home = (props) => {
+  const [mouseX, setMouseX] = useState(1329);
+  const [mouseY, setMouseY] = useState(1829);
+
+  useEffect(() => {const spotlight = document.getElementById('spotlight');
+
+
+  if(spotlight != null)
+  (
+        document.addEventListener('mousemove', (e) => {
+          setMouseX(e.clientX);
+          setMouseY(e.clientY);
+            //spotlight.style.backgroundColor = 'red' // Adjust for spotlight size
+            //spotlight.style.top = mouseY - 100 + 'px'; // Adjust for spotlight size
+        })
+  )
+  }, [])
   return (
-    <div className="home-container">
+    <div className="home-container" id = 'spotlight' style={
+      {
+        "background-image": `linear-gradient((600px at ${mouseX}px ${mouseY}px, #bdc3c7 0%, #2c3e50 100%);`,
+        //background: `radial-gradient(600px at ${mouseX}px ${mouseY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
+      }
+      
+    }>
       <Helmet>
         <title>Landing Page</title>
         <meta property="og:title" content="Landing Page" />
@@ -48,7 +70,7 @@ const Home = (props) => {
             <div className="home-container1">
               <img
                 alt="image"
-                src="https://play.teleporthq.io/static/svg/default-img.svg"
+                src= "Hack"
                 className="home-image1"
               />
               <div data-role="CloseMobileMenu" className="home-close-menu">
@@ -256,8 +278,8 @@ const Home = (props) => {
           <div className="home-right-section">
             <div className="home-card">
               <img
-                alt="image"
-                src="https://play.teleporthq.io/static/svg/default-img.svg"
+                alt="hackathonCertificate"
+                src= {HackathonCertificate}
                 className="home-image4"
               />
               <div className="home-content-container2">
