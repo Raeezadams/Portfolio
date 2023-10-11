@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
+//const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import './home.css'
@@ -8,34 +8,30 @@ const Home = (props) => {
   const [mouseX, setMouseX] = useState(1329);
   const [mouseY, setMouseY] = useState(1829);
 
-  useEffect(() => {const spotlight = document.getElementById('spotlight');
-
-
-  if(spotlight != null)
-  (
-        document.addEventListener('mousemove', (e) => {
-          setMouseX(e.clientX);
-          setMouseY(e.clientY);
-            //spotlight.style.backgroundColor = 'red' // Adjust for spotlight size
-            //spotlight.style.top = mouseY - 100 + 'px'; // Adjust for spotlight size
-        })
-  )
+  useEffect(() => {
+    const spotlight = document.getElementById('spotlight');
+    if(spotlight != null)
+    {
+      document.addEventListener('mousemove', (e) => {
+        setMouseX(e.clientX);
+        setMouseY(e.clientY);
+      })
+    }
   }, [])
+
   return (
-    <div className="home-container" id = 'spotlight' style={
-      {
-        "background-image": `linear-gradient((600px at ${mouseX}px ${mouseY}px, #bdc3c7 0%, #2c3e50 100%);`,
-        //background: `radial-gradient(600px at ${mouseX}px ${mouseY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
-      }
-      
-    }>
+    <div 
+      id='spotlight'
+      className="home-container"  
+      style={{ background: `radial-gradient(100px at ${mouseX}px ${mouseY}px, #bdc3c7, #2c3e50 100%)` }}
+    >
       <Helmet>
         <title>Landing Page</title>
         <meta property="og:title" content="Landing Page" />
       </Helmet>
-      <div data-role="Header" className="home-navbar-container">
+      <div data-role="Header" className="home-navbar-container" >
         <div className="home-navbar">
-          <div className="home-left-side">
+          <div className="home-left-side" >
             <img
               alt="image"
               src="/whatsapp%20image%202023-10-09%20at%2013.45.46_e72ad732-200w.jpg"
@@ -279,7 +275,7 @@ const Home = (props) => {
             <div className="home-card">
               <img
                 alt="hackathonCertificate"
-                src= {HackathonCertificate}
+                src= {'HackathonCertificate'}
                 className="home-image4"
               />
               <div className="home-content-container2">
