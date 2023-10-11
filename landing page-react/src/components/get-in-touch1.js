@@ -29,7 +29,7 @@ const GetInTouch1 = (props) => {
             placeholder={props.Message_placeholder}
             className="get-in-touch1-message textarea"
           ></textarea>
-          <button className="get-in-touch1-cta-btn Anchor button">
+          <button className="get-in-touch1-cta-btn button Anchor">
             {props.Cta_btn}
           </button>
         </div>
@@ -65,29 +65,29 @@ const GetInTouch1 = (props) => {
 }
 
 GetInTouch1.defaultProps = {
-  heading: 'Contact ME',
-  Heading: 'Send me a message',
-  Name_placeholder: 'Name',
   Email_placeholder: 'E-mail',
-  Message_placeholder: 'Your Message',
-  Cta_btn: 'SEND',
-  Heading1: 'South Africa, CPT',
-  text: 'Cape Town, Kenwyn\n',
-  text1: 'Raeezadams123@gmail.com',
+  heading: 'Contact ME',
   text2: '0829532292\n',
+  text: 'Cape Town, Kenwyn\n',
+  Heading1: 'South Africa, CPT',
+  Message_placeholder: 'Your Message',
+  Name_placeholder: 'Name',
+  text1: 'Raeezadams123@gmail.com',
+  Heading: 'Send me a message',
+  Cta_btn: 'SEND',
 }
 
 GetInTouch1.propTypes = {
-  heading: PropTypes.string,
-  Heading: PropTypes.string,
-  Name_placeholder: PropTypes.string,
   Email_placeholder: PropTypes.string,
-  Message_placeholder: PropTypes.string,
-  Cta_btn: PropTypes.string,
-  Heading1: PropTypes.string,
-  text: PropTypes.string,
-  text1: PropTypes.string,
+  heading: PropTypes.string,
   text2: PropTypes.string,
+  text: PropTypes.string,
+  Heading1: PropTypes.string,
+  Message_placeholder: PropTypes.string,
+  Name_placeholder: PropTypes.string,
+  text1: PropTypes.string,
+  Heading: PropTypes.string,
+  Cta_btn: PropTypes.string,
 }
 
 export default GetInTouch1

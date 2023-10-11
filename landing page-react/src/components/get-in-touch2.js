@@ -67,29 +67,29 @@ const GetInTouch2 = (props) => {
 }
 
 GetInTouch2.defaultProps = {
-  heading: 'Contact ME',
-  Heading: 'Send me a message',
-  Name_placeholder: 'Name',
-  Email_placeholder: 'E-mail',
-  Message_placeholder: 'Your Message',
-  Cta_btn: 'SEND',
-  Heading1: 'South Africa, CPT',
-  text: 'Cape Town, Kenwyn\n',
   text1: 'Raeezadams123@gmail.com',
   text2: '0829532292\n',
+  text: 'Cape Town, Kenwyn\n',
+  Heading1: 'South Africa, CPT',
+  Cta_btn: 'SEND',
+  Heading: 'Send me a message',
+  Name_placeholder: 'Name',
+  heading: 'Contact ME',
+  Email_placeholder: 'E-mail',
+  Message_placeholder: 'Your Message',
 }
 
 GetInTouch2.propTypes = {
-  heading: PropTypes.string,
-  Heading: PropTypes.string,
-  Name_placeholder: PropTypes.string,
-  Email_placeholder: PropTypes.string,
-  Message_placeholder: PropTypes.string,
-  Cta_btn: PropTypes.string,
-  Heading1: PropTypes.string,
-  text: PropTypes.string,
   text1: PropTypes.string,
   text2: PropTypes.string,
+  text: PropTypes.string,
+  Heading1: PropTypes.string,
+  Cta_btn: PropTypes.string,
+  Heading: PropTypes.string,
+  Name_placeholder: PropTypes.string,
+  heading: PropTypes.string,
+  Email_placeholder: PropTypes.string,
+  Message_placeholder: PropTypes.string,
 }
 
 export default GetInTouch2

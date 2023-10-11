@@ -65,29 +65,29 @@ const GetInTouch = (props) => {
 }
 
 GetInTouch.defaultProps = {
+  text: 'Cape Town, Kenwyn\n',
+  Message_placeholder: 'Your Message',
   heading: 'Contact ME',
   Heading: 'Send me a message',
-  Name_placeholder: 'Name',
   Email_placeholder: 'E-mail',
-  Message_placeholder: 'Your Message',
   Cta_btn: 'SEND',
-  Heading1: 'South Africa, CPT',
-  text: 'Cape Town, Kenwyn\n',
-  text1: 'Raeezadams123@gmail.com',
   text2: '0829532292\n',
+  text1: 'Raeezadams123@gmail.com',
+  Heading1: 'South Africa, CPT',
+  Name_placeholder: 'Name',
 }
 
 GetInTouch.propTypes = {
+  text: PropTypes.string,
+  Message_placeholder: PropTypes.string,
   heading: PropTypes.string,
   Heading: PropTypes.string,
-  Name_placeholder: PropTypes.string,
   Email_placeholder: PropTypes.string,
-  Message_placeholder: PropTypes.string,
   Cta_btn: PropTypes.string,
-  Heading1: PropTypes.string,
-  text: PropTypes.string,
-  text1: PropTypes.string,
   text2: PropTypes.string,
+  text1: PropTypes.string,
+  Heading1: PropTypes.string,
+  Name_placeholder: PropTypes.string,
 }
 
 export default GetInTouch

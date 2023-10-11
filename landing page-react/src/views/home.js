@@ -1,34 +1,37 @@
-import React, { useState } from 'react'
-const   HackathonCertificate =  require('../Shared/HackathonCertificate.png')
+import React from 'react'
+import Graduation from '../Shared/Graduation.jpg'
+import HackathonCertificate from '../Shared/HackathonCertificate.png'
+import Smartdelivery1 from '../Shared/Smartdelivery1.png'
+import Smartdelivery2 from '../Shared/Smartdelivery2.png'
+import UWC from '../Shared/UWC.png'
+import UdemyWebDev from '../Shared/UdemyWebDev.png'
 import { Helmet } from 'react-helmet'
 import { useEffect } from 'react'
 import './home.css'
+import {useState} from 'react'
 
 const Home = (props) => {
   const [mouseX, setMouseX] = useState(1329);
   const [mouseY, setMouseY] = useState(1829);
 
-  useEffect(() => {const spotlight = document.getElementById('spotlight');
-
-
-  if(spotlight != null)
-  (
-        document.addEventListener('mousemove', (e) => {
-          setMouseX(e.clientX);
-          setMouseY(e.clientY);
-            //spotlight.style.backgroundColor = 'red' // Adjust for spotlight size
-            //spotlight.style.top = mouseY - 100 + 'px'; // Adjust for spotlight size
-        })
-  )
+  useEffect(() => {
+    const spotlight = document.getElementById('spotlight');
+    if(spotlight != null)
+    {
+      document.addEventListener('mousemove', (e) => {
+        setMouseX(e.pageX);
+        setMouseY(e.pageY);
+      })
+    }
   }, [])
+
   return (
-    <div className="home-container" id = 'spotlight' style={
-      {
-        "background-image": `linear-gradient((600px at ${mouseX}px ${mouseY}px, #bdc3c7 0%, #2c3e50 100%);`,
-        //background: `radial-gradient(600px at ${mouseX}px ${mouseY}px, rgba(29, 78, 216, 0.15), transparent 80%)`
-      }
-      
-    }>
+    <div 
+      id='spotlight'
+      className="home-container"  
+      style={{ background: `radial-gradient(100px at ${mouseX}px ${mouseY}px, #f4f9ff, #536878 100%)` }}
+      >
+
       <Helmet>
         <title>Landing Page</title>
         <meta property="og:title" content="Landing Page" />
@@ -62,15 +65,20 @@ const Home = (props) => {
             </div>
           </div>
           <div className="home-right-side">
-            <button type="button" className="home-cta-btn button Anchor">
+            <a
+              href="https://drive.google.com/file/d/10UIUhdWAi-G3CE4sCM97IIcb2EgJ6MPn/view?usp=drive_link"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="home-cta-btn button Anchor"
+            >
               MY CV
-            </button>
+            </a>
           </div>
           <div data-role="MobileMenu" className="home-mobile-menu">
             <div className="home-container1">
               <img
                 alt="image"
-                src= "Hack"
+                src="https://play.teleporthq.io/static/svg/default-img.svg"
                 className="home-image1"
               />
               <div data-role="CloseMobileMenu" className="home-close-menu">
@@ -108,9 +116,14 @@ const Home = (props) => {
               and I am furthering my education by pursing my Honour. Hoping to
               find work in software development.
             </span>
-            <button type="button" className="home-cta-btn1 button Anchor">
+            <a
+              href="https://drive.google.com/file/d/10UIUhdWAi-G3CE4sCM97IIcb2EgJ6MPn/view?usp=drive_link"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="home-cta-btn1 button Anchor"
+            >
               MY CV
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -245,13 +258,13 @@ const Home = (props) => {
         <div className="home-cards-container1">
           <div className="home-left-section">
             <img
-              src="https://play.teleporthq.io/static/svg/default-img.svg"
               alt="image"
+              src={Smartdelivery1}
               className="home-image2"
             />
             <img
-              src="https://play.teleporthq.io/static/svg/default-img.svg"
               alt="image"
+              src={Smartdelivery2}
               className="home-image3"
             />
             <div className="home-content-container1">
@@ -277,14 +290,21 @@ const Home = (props) => {
           </div>
           <div className="home-right-section">
             <div className="home-card">
-              <img
-                alt="hackathonCertificate"
-                src= {HackathonCertificate}
-                className="home-image4"
-              />
+              <a
+                href="https://drive.google.com/file/d/1HbqsY6wkC-hqwrsXBNEoZE9egD2RINvI/view?usp=drive_link"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="home-link08"
+              >
+                <img
+                  alt="image"
+                  src={HackathonCertificate}
+                  className="home-image4"
+                />
+              </a>
               <div className="home-content-container2">
                 <span className="home-text16 SmallCard-Heading">Hackathon</span>
-                <span className="home-link08">
+                <span className="home-link09">
                   Competed in a hackathon focused on intelligent transportation
                   systems, where I was part of a small group tasked with
                   developing a solution from the ground up.
@@ -297,14 +317,14 @@ const Home = (props) => {
             <div className="home-card1">
               <img
                 alt="image"
-                src="https://play.teleporthq.io/static/svg/default-img.svg"
+                src={UWC}
                 className="home-image5"
               />
               <div className="home-content-container3">
                 <span className="home-text17 SmallCard-Heading">
                   Information Systems Tutor
                 </span>
-                <span className="home-link09">
+                <span className="home-link10">
                   Tutored 1st year students in Information Systems where i
                   taught them the basics of hardware, software, HTML,CSS and
                   JavaScript
@@ -317,14 +337,14 @@ const Home = (props) => {
             <div className="home-card2">
               <img
                 alt="image"
-                src="https://play.teleporthq.io/static/svg/default-img.svg"
+                src={Graduation}
                 className="home-image6"
               />
               <div className="home-content-container4">
                 <span className="home-text18 SmallCard-Heading">
                   Graduation 
                 </span>
-                <span className="home-link10">
+                <span className="home-link11">
                   Graduated with a degree in Information Systems where i learnt
                   about HTML, CSS, JavaScript, Java, SQL, and agile
                   methodologies
@@ -335,16 +355,23 @@ const Home = (props) => {
               </div>
             </div>
             <div className="home-card3">
-              <img
-                alt="image"
-                src="https://play.teleporthq.io/static/svg/default-img.svg"
-                className="home-image7"
-              />
+              <a
+                href="https://drive.google.com/file/d/1jlKEhfuJkhARu8rvnfGETdimjUoFpzNo/view?usp=drive_link"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="home-link12"
+              >
+                <img
+                  alt="image"
+                  src={UdemyWebDev}
+                  className="home-image7"
+                />
+              </a>
               <div className="home-content-container5">
                 <span className="home-text19 SmallCard-Heading">
                   Web Developer Udemy Course 
                 </span>
-                <span className="home-link11">
+                <span className="home-link13">
                   Completed an online Udemy course to further ground my web
                   development skills and provide proof of my ability
                 </span>
@@ -356,61 +383,48 @@ const Home = (props) => {
           </div>
         </div>
       </div>
-      <a href="#Contact Me" className="home-link12">
-        <section id="ContactMe" className="home-get-in-touch">
-          <h2 className="home-text20 Section-Heading">Contact ME</h2>
-          <div className="home-form-container">
-            <span className="home-heading08 BigCard-Heading">
-              Send me a message
-            </span>
-            <input
-              type="text"
-              required="true"
-              placeholder="Name"
-              className="home-name input"
-            />
-            <input
-              type="text"
-              required="true"
-              placeholder="E-mail"
-              className="home-email input"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="home-message textarea"
-            ></textarea>
-            <button className="home-cta-btn2 Anchor button">SEND</button>
-          </div>
-          <div className="home-content-container6">
-            <div className="home-locations-container">
-              <div className="home-location-1">
-                <span className="home-heading09">South Africa, CPT</span>
-                <div className="home-adress">
-                  <svg viewBox="0 0 1024 1024" className="home-icon37">
-                    <path d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"></path>
-                  </svg>
-                  <span>Cape Town, Kenwyn</span>
-                </div>
-                <div className="home-email1">
-                  <svg viewBox="0 0 1024 1024" className="home-icon39">
-                    <path d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"></path>
-                  </svg>
-                  <span className="Section-Text">Raeezadams123@gmail.com</span>
-                </div>
-                <div className="home-phone">
-                  <svg
-                    viewBox="0 0 804.5714285714286 1024"
-                    className="home-icon41"
-                  >
-                    <path d="M804.571 708.571c0 20.571-9.143 60.571-17.714 79.429-12 28-44 46.286-69.714 60.571-33.714 18.286-68 29.143-106.286 29.143-53.143 0-101.143-21.714-149.714-39.429-34.857-12.571-68.571-28-100-47.429-97.143-60-214.286-177.143-274.286-274.286-19.429-31.429-34.857-65.143-47.429-100-17.714-48.571-39.429-96.571-39.429-149.714 0-38.286 10.857-72.571 29.143-106.286 14.286-25.714 32.571-57.714 60.571-69.714 18.857-8.571 58.857-17.714 79.429-17.714 4 0 8 0 12 1.714 12 4 24.571 32 30.286 43.429 18.286 32.571 36 65.714 54.857 97.714 9.143 14.857 26.286 33.143 26.286 50.857 0 34.857-103.429 85.714-103.429 116.571 0 15.429 14.286 35.429 22.286 49.143 57.714 104 129.714 176 233.714 233.714 13.714 8 33.714 22.286 49.143 22.286 30.857 0 81.714-103.429 116.571-103.429 17.714 0 36 17.143 50.857 26.286 32 18.857 65.143 36.571 97.714 54.857 11.429 5.714 39.429 18.286 43.429 30.286 1.714 4 1.714 8 1.714 12z"></path>
-                  </svg>
-                  <span>0829532292</span>
-                </div>
+      <section id="ContactMe" className="home-get-in-touch">
+        <h2 className="home-text20 Section-Heading">Contact ME</h2>
+        <div className="home-form-container">
+          <span className="home-heading08 BigCard-Heading">
+            Send me a message
+          </span>
+          <a
+            href="mailto:Raeezadams123@gmail.com?subject="
+            className="home-cta-btn2 button Anchor"
+          >
+            SEND
+          </a>
+        </div>
+        <div className="home-content-container6">
+          <div className="home-locations-container">
+            <div className="home-location-1">
+              <span className="home-heading09">South Africa, CPT</span>
+              <div className="home-adress">
+                <svg viewBox="0 0 1024 1024" className="home-icon37">
+                  <path d="M512 0c-176.732 0-320 143.268-320 320 0 320 320 704 320 704s320-384 320-704c0-176.732-143.27-320-320-320zM512 512c-106.040 0-192-85.96-192-192s85.96-192 192-192 192 85.96 192 192-85.96 192-192 192z"></path>
+                </svg>
+                <span>Cape Town, Kenwyn</span>
+              </div>
+              <div className="home-email">
+                <svg viewBox="0 0 1024 1024" className="home-icon39">
+                  <path d="M854 342v-86l-342 214-342-214v86l342 212zM854 170q34 0 59 26t25 60v512q0 34-25 60t-59 26h-684q-34 0-59-26t-25-60v-512q0-34 25-60t59-26h684z"></path>
+                </svg>
+                <span className="Section-Text">Raeezadams123@gmail.com</span>
+              </div>
+              <div className="home-phone">
+                <svg
+                  viewBox="0 0 804.5714285714286 1024"
+                  className="home-icon41"
+                >
+                  <path d="M804.571 708.571c0 20.571-9.143 60.571-17.714 79.429-12 28-44 46.286-69.714 60.571-33.714 18.286-68 29.143-106.286 29.143-53.143 0-101.143-21.714-149.714-39.429-34.857-12.571-68.571-28-100-47.429-97.143-60-214.286-177.143-274.286-274.286-19.429-31.429-34.857-65.143-47.429-100-17.714-48.571-39.429-96.571-39.429-149.714 0-38.286 10.857-72.571 29.143-106.286 14.286-25.714 32.571-57.714 60.571-69.714 18.857-8.571 58.857-17.714 79.429-17.714 4 0 8 0 12 1.714 12 4 24.571 32 30.286 43.429 18.286 32.571 36 65.714 54.857 97.714 9.143 14.857 26.286 33.143 26.286 50.857 0 34.857-103.429 85.714-103.429 116.571 0 15.429 14.286 35.429 22.286 49.143 57.714 104 129.714 176 233.714 233.714 13.714 8 33.714 22.286 49.143 22.286 30.857 0 81.714-103.429 116.571-103.429 17.714 0 36 17.143 50.857 26.286 32 18.857 65.143 36.571 97.714 54.857 11.429 5.714 39.429 18.286 43.429 30.286 1.714 4 1.714 8 1.714 12z"></path>
+                </svg>
+                <span>0829532292</span>
               </div>
             </div>
           </div>
-        </section>
-      </a>
+        </div>
+      </section>
       <div className="home-footer-container">
         <div className="home-footer">
           <div className="home-social-links">
@@ -418,7 +432,7 @@ const Home = (props) => {
               href="https://www.linkedin.com/in/raeez-adams-41a76b25b"
               target="_blank"
               rel="noreferrer noopener"
-              className="home-link13"
+              className="home-link14"
             >
               <svg viewBox="0 0 877.7142857142857 1024" className="home-icon43">
                 <path d="M135.429 808h132v-396.571h-132v396.571zM276 289.143c-0.571-38.857-28.571-68.571-73.714-68.571s-74.857 29.714-74.857 68.571c0 37.714 28.571 68.571 73.143 68.571h0.571c46.286 0 74.857-30.857 74.857-68.571zM610.286 808h132v-227.429c0-121.714-65.143-178.286-152-178.286-70.857 0-102.286 39.429-119.429 66.857h1.143v-57.714h-132s1.714 37.143 0 396.571v0h132v-221.714c0-11.429 0.571-23.429 4-32 9.714-23.429 31.429-48 68-48 47.429 0 66.286 36 66.286 89.714v212zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"></path>
@@ -428,7 +442,7 @@ const Home = (props) => {
               href="https://www.instagram.com/raeez_adams/"
               target="_blank"
               rel="noreferrer noopener"
-              className="home-link14"
+              className="home-link15"
             >
               <svg viewBox="0 0 877.7142857142857 1024" className="home-icon45">
                 <path d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"></path>
@@ -438,7 +452,7 @@ const Home = (props) => {
               href="https://github.com/Raeezadams"
               target="_blank"
               rel="noreferrer noopener"
-              className="home-link15"
+              className="home-link16"
             >
               <svg viewBox="0 0 877.7142857142857 1024" className="home-icon47">
                 <path d="M296.571 685.714v0c1.143-1.714 0.571-5.143-1.714-7.429-2.857-2.286-6.286-2.857-8-1.143-1.143 1.714-0.571 5.143 1.714 7.429 2.857 2.286 6.286 2.857 8 1.143zM280.571 662.286c-1.714-2.286-4.571-3.429-6.857-2.286-1.714 1.143-1.714 4.571 0 6.857 2.286 2.857 5.143 4 6.857 2.857v0c1.714-1.143 1.714-4.571 0-7.429zM257.143 639.429v0c0.571-1.143-0.571-3.429-2.857-4.571-1.714-0.571-4-0.571-4.571 1.143-1.143 1.714 0 3.429 2.286 4.571 2.286 0.571 4.571 0.571 5.143-1.143zM269.143 652.571v0c1.143-1.143 1.143-4-1.143-5.714-1.714-2.286-4.571-2.857-5.714-1.714-1.714 1.714-1.143 4 0.571 6.286 1.714 1.714 4.571 2.857 6.286 1.143zM318.286 695.429v0c0.571-2.286-1.714-5.143-5.143-6.286s-6.286 0-7.429 2.286c-0.571 2.286 1.714 5.143 5.143 6.286s6.286 0 7.429-2.286zM342.286 697.143v0c0-2.286-2.857-4.571-6.857-4.571-3.429 0-5.714 2.286-5.714 4.571s2.857 4.571 6.286 4.571 6.286-2.286 6.286-4.571zM364.571 693.143v0c-0.571-2.286-4-3.429-7.429-2.857s-5.714 2.857-5.143 5.143 3.429 4 6.857 3.429 5.714-3.429 5.714-5.714zM731.429 512c0-161.714-130.857-292.571-292.571-292.571s-292.571 130.857-292.571 292.571c0 129.143 84 238.857 200 277.714 14.857 2.857 20-6.286 20-14.286 0-6.857 0-29.714-0.571-54.286 0 0-81.143 17.714-98.286-34.857 0 0-13.143-33.714-32.571-42.286 0 0-26.286-18.286 2.286-18.286 0 0 28.571 2.286 44.571 30.286 25.714 45.143 68.571 32 85.143 24.571 2.857-18.857 10.286-32 18.857-39.429-65.143-7.429-133.714-32.571-133.714-144.571 0-32 11.429-57.714 30.286-78.286-2.857-7.429-13.143-37.143 2.857-77.714 24.571-7.429 80.571 30.286 80.571 30.286 23.429-6.857 48-9.714 73.143-9.714s49.714 2.857 73.143 9.714c0 0 56-37.714 80.571-30.286 16 40.571 5.714 70.286 2.857 77.714 18.857 20.571 30.286 46.286 30.286 78.286 0 112.571-68.571 137.143-133.714 144.571 10.286 9.143 20 26.857 20 54.286 0 38.857-0.571 70.286-0.571 80 0 8 5.143 17.143 20 14.286 116-38.857 200-148.571 200-277.714zM877.714 237.714v548.571c0 90.857-73.714 164.571-164.571 164.571h-548.571c-90.857 0-164.571-73.714-164.571-164.571v-548.571c0-90.857 73.714-164.571 164.571-164.571h548.571c90.857 0 164.571 73.714 164.571 164.571z"></path>
