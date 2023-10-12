@@ -112,9 +112,8 @@ const Home = (props) => {
               <br></br>
             </h1>
             <span className="home-text04">
-              My name is Raeez Adams, I have a bachelors in Information systems
-              and I am furthering my education by pursing my Honour. Hoping to
-              find work in software development.
+              
+My name is Raeez Adams, and I hold a bachelor's degree in Information Systems. I am currently furthering my education by pursuing an Honours degree, with the goal of securing a position in software development.
             </span>
             <a
               href="https://drive.google.com/file/d/10UIUhdWAi-G3CE4sCM97IIcb2EgJ6MPn/view?usp=drive_link"
@@ -351,7 +350,7 @@ const Home = (props) => {
                 </span>
               </div>
               <div className="home-info-container3">
-                <span className="Card-Text">12 Jan 2023</span>
+                <span className="Card-Text">2022</span>
               </div>
             </div>
             <div className="home-card3">
