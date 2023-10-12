@@ -31,14 +31,13 @@ const Home = (props) => {
       className="home-container"  
       style={{ background: `radial-gradient(100px at ${mouseX}px ${mouseY}px, #f4f9ff, #536878 100%)` }}
       >
-
       <Helmet>
         <title>Landing Page</title>
         <meta property="og:title" content="Landing Page" />
       </Helmet>
-      <div data-role="Header" className="home-navbar-container">
+      <div data-role="Header" className="home-navbar-container" >
         <div className="home-navbar">
-          <div className="home-left-side">
+          <div className="home-left-side" >
             <img
               alt="image"
               src="/whatsapp%20image%202023-10-09%20at%2013.45.46_e72ad732-200w.jpg"
